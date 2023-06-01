@@ -1,0 +1,339 @@
+.app {
+   height: 100vh;
+   display: flex;
+   background-color: #020230;
+   color: white;
+}
+
+.main {
+   width: 75%;
+   background: linear-gradient(to bottom, rgba(0,0,0,0), #020230), 
+   url("./assets/pexels-maryann-kariuki-4303031.jpg") center;
+   display: flex;
+   flex-direction: column;
+}
+
+.top {
+   height: 20%;
+   position: relative;
+}
+
+.timer {
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
+   border: 5px solid white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 30px;
+   font-weight: 700;
+   position: absolute;
+   bottom: 20px;
+   left: 80px;
+}
+
+.bottom {
+   height: 80%;
+}
+
+.trivia {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 8rem;
+}
+
+.question {
+   width: 80%;
+   background: linear-gradient(#100241, black);
+   border: 2px solid white; 
+   text-align: center;
+   padding: 20px;
+   border-radius: 10px;
+   font-size: 20px;
+   margin-top: 7rem;
+}
+
+.answers {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.answer {
+   width: 40%;
+   padding: 10px;
+   text-align: center;
+   background: linear-gradient(#0e0124, #22074d);
+   border: 1px solid white;
+   border-radius: 15px;
+   font-size: 20px;
+   font-weight: 300;
+   cursor: pointer;
+   margin: 0 10px 40px 10px;
+}
+
+.answer:hover, .answer.active {
+   background: mediumblue;
+}
+
+.answer.correct {
+   animation: correct 3s ease forwards;
+}
+
+@keyframes correct {
+
+   0%,
+   22%,
+   42% {
+      background: mediumblue;
+   }
+
+   20%,
+   40%,
+   60% {
+      background: linear-gradient(#0e0124, #22074d);
+   }
+
+   62%,
+   100% {
+      background: green;
+   }
+}
+
+.answer.wrong {
+   animation: wrong 3s ease forwards;
+}
+
+@keyframes wrong {
+
+   0%,
+   22%,
+   42% {
+      background: mediumblue;
+   }
+
+   20%,
+   40%,
+   60% {
+      background: linear-gradient(#0e0124, #22074d);
+   }
+
+   62%,
+   100% {
+      background: crimson;
+   }
+}
+
+.pyramid{
+   width: 25%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.moneyList {
+   list-style: none;
+   width: 100%;
+   padding: 4rem;
+}
+
+.moneyListItem {
+   display: flex;
+   align-items:center;
+   padding: 5px;
+   border-radius: 5px;
+}
+
+.moneyListItem.active {
+   background-color: teal;
+}    
+
+.moneyListItemNumber {
+   font-size: 18px;
+   font-weight: 100;
+   width: 30%;
+}
+
+.moneyListItemAmount {
+   font-size: 20px;
+   font-weight: 300;
+   width: 70%;
+   text-align: end;
+}
+
+.endGame {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 4rem;
+}
+
+.endGameBtn {
+   border: none;
+   font-size: 1.3rem;
+   padding: 5px 8px;
+   border-radius: 5px;
+   cursor: pointer;
+   background-color: aliceblue;
+   border: 1px solid aliceblue;
+}
+
+.endGameBtn:hover {
+   background-color:cadetblue;
+} 
+
+@media screen and (max-width: 1050px) {
+   .top {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      .timer {
+         position: relative;
+         bottom: 0px;
+         left: 0px;
+         margin-top: 5rem;
+      }
+
+      .moneyListItemNumber {
+         display: block;
+         font-size: 15px;
+      }
+
+      .moneyListItemAmount {
+         font-size: 15px;
+         text-align: end;
+         width: 98%;
+      }
+
+      .moneyList {
+         padding: 0.8rem;
+      }
+
+      .trivia {
+         gap: 6rem;
+      }
+
+      .question {
+         width: 85%;
+         padding: 20px 10px;
+         font-size: 18px;
+         margin-top: 5rem;
+      }
+
+      .answer {
+         width: 43%;
+         padding: 10px 3px;
+         font-size: 18px;
+         margin: 0 10px 50px 10px;
+      }
+     
+}
+
+@media screen and (max-width: 650px) {
+      .timer {
+         margin-top: 4rem;
+      }
+   
+      .main {
+         width: 75%;
+      }
+   
+      .pyramid {
+         width: 25%;
+      }
+   
+      .moneyListItemNumber {
+         display: none;
+      }
+   
+      .moneyListItemAmount {
+         font-size: 17px;
+         text-align: center;
+         width: 100%;
+      }
+   
+      .moneyList {
+         padding: 0.2rem;
+      }
+   
+      .moneyListItem {
+         justify-content: center;
+         padding: 5px 0;
+      }
+   
+      .endText {
+         font-size: 1.5rem;
+      }
+   
+      .trivia {
+         gap: 4rem;
+      }
+   
+      .question {
+         padding: 10px;
+         font-size: 20px;
+         margin-top: 3rem;
+      }
+   
+      .answer {
+         width: 43%;
+         padding: 10px 3px;
+         font-size: 19px;
+         margin: 0 10px 40px 10px;
+      }
+}
+
+
+@media screen and (max-width:414px) {
+   .timer {
+         margin-top: 3rem;
+   }
+
+   .main {
+      width: 70%;
+   }
+
+   .pyramid {
+      width: 30%;
+   }
+   .moneyListItemNumber {
+         display: none;
+      }
+
+   .moneyListItemAmount {
+      font-size: 14px;
+   }
+
+   .endText {
+         font-size: 1.5rem;
+   }
+
+   .trivia {
+      gap: 3rem;
+   }
+
+   .question {
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 4rem;
+   }
+
+   .answer {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      margin: 0 10px 40px 10px;
+   }
+
+}
+
+
+
